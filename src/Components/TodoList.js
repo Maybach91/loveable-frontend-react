@@ -42,8 +42,8 @@ const TodoList = () => {
 
   return (
     <div className={"max-w-screen-md py-10 mx-auto"}>
-      <h1 className={"text-3xl font-bold mb-4"}>Todo List</h1>{openCount}/{todos.length}
-      <div>
+      <h1 className={"text-3xl font-bold mb-4"}>Todo List</h1>{openCount} offene Aufgaben von ingesamt {todos.length}
+      <div className={"mb-4"}>
         <form onSubmit={addTodo}>
           <label htmlFor="hs-trailing-button-add-on-with-icon" className="sr-only">New Todo</label>
           <div className="flex rounded-md shadow-sm">
@@ -52,7 +52,7 @@ const TodoList = () => {
                    onChange={changeText}
                    placeholder="z.B. Putzen"
                    value={textinput}
-                   className="py-3 px-4 block w-full border-gray-200 shadow-sm rounded-l-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"/>
+                   className="py-3 px-4 block w-full border-gray-200 bg-gray-100 shadow-sm rounded-l-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"/>
             <button onClick={addTodo} type="submit"
                     className="inline-flex flex-shrink-0 justify-center items-center h-[2.875rem] w-[2.875rem] rounded-r-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm">
               <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -63,7 +63,7 @@ const TodoList = () => {
           </div>
         </form>
       </div>
-      <ul className="max-w-sm flex flex-col">
+      <ul className="flex flex-col">
         {todos.map((todo, index) => {
           return (
             <li key={index}
@@ -76,8 +76,6 @@ const TodoList = () => {
           );
         })}
       </ul>
-
-
     </div>
   );
 };
